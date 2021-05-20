@@ -1,0 +1,19 @@
+//
+// Do any local configuration here
+//
+zone "louis-roobaert.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/db.louis-roobaert.sb.uclllabs.be";
+	allow-query { any; };
+	allow-transfer { trusted-nameservers; }; 
+};
+
+acl trusted-nameservers {
+  193.191.176.254; //ns1 
+  193.191.177.4; //ns2
+}; 
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
